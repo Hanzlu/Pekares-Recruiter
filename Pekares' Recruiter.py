@@ -49,4 +49,4 @@ while x > 0:
     print("telegram sent to" , name, "at", time.strftime("%H:%M:%S"))
     old.old = name
     
-    time.sleep(179)
+    time.sleep(180)
