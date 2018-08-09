@@ -10,7 +10,12 @@
 
 
 #to use:
-#fill in your "client key", "tgid" and "secret key" 
+#fill in your "client key", "tgid" and "secret key" below 
+
+client = ""
+tgid = ""
+secret = ""
+
 
 import time
 import urllib.request
@@ -19,10 +24,6 @@ x = 1
 
 class old:
     old = ""
-
-client = ""
-tgid = ""
-secret = ""
 
 
 while x > 0:
