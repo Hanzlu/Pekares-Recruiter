@@ -12,7 +12,7 @@
 
 #to use:
 #run, and fill in your "client key", "tgid" and "secret key" when asked 
-#for errrors, read the read.me
+#for errrors, read the README.md
 
 import time
 import urllib.request
