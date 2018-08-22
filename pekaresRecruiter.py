@@ -18,7 +18,6 @@ import time
 import urllib.request
 
 x = 1
-waitTime = 180
 
 class old:
     old = ""
@@ -31,6 +30,8 @@ key = input("Enter secret key: ")
 while x > 0:
     
     try:
+        waitTime = 180
+        
         #page with new nations
         page = urllib.request.urlopen("https://www.nationstates.net/cgi-bin/api.cgi?q=newnations")
         content = str(page.read())
