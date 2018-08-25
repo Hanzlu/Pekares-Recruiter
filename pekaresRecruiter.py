@@ -26,7 +26,6 @@ client = input("Enter client key: ")
 tgid = input("Enter telegram id: ")
 key = input("Enter secret key: ")
 
-
 while x > 0:
     waitTime = 180
     
@@ -35,12 +34,8 @@ while x > 0:
         page = urllib.request.urlopen("https://www.nationstates.net/cgi-bin/api.cgi?q=newnations")
         content = str(page.read())
         index = content.index(",")
-        name = content[23:index]        
-
-        #send telegram
-        urllib.request.urlopen("https://www.nationstates.net/cgi-bin/api.cgi?a=sendTG&client=%s&to=%s&tgid=%s&key=%s" % (client, name, tgid, key))
-        print("telegram sent to" , name, "at", time.strftime("%H:%M:%S"))        
-    
+        name = content[23:index]
+        
         #if trying to send to same nation twice
         while old.old == name:
             time.sleep(30)
@@ -49,13 +44,15 @@ while x > 0:
             content = str(page.read())
             index = content.index(",")
             name = content[23:index]
+            
+        #send telegram
+        urllib.request.urlopen("https://www.nationstates.net/cgi-bin/api.cgi?a=sendTG&client=%s&to=%s&tgid=%s&key=%s" % (client, name, tgid, key))
+        print("telegram sent to" , name, "at", time.strftime("%H:%M:%S"))
+
+        if waitTime > 0:
+            time.sleep(waitTime)
         
         old.old = name
     
     except:
         time.sleep(60)
-        continue
-    try:
-        time.sleep(waitTime)
-    except:
-        pass
